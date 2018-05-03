@@ -16,9 +16,13 @@ Software Requirements Specification for OMG Version 0.1
     reference
 
 
-
-Name:金明熠 jinmingyi1998@sina.cn 
 ----------------------------------------
 
-Date:30 Apr 2018
--------------------
+:Auther:
+    金明熠
+
+:Contact:
+    jinmingyi1998@sina.cn 
+
+:Version:
+    0.1 of 2018/5/1
