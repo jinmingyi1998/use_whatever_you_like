@@ -75,10 +75,6 @@ Export to Excel
 
 The application should support exporting to Excel
 
-Response time
-^^^^^^^^^^^^^
-
-<5 seconds
 
 Sample Output
 ^^^^^^^^^^

@@ -26,6 +26,10 @@ This web application is a easy tool for biologists to quickly analyse genes.
 User characteristics
 ----------------------
 
+Biologists are busy analysing datas.
+Biologists don't know much about computer science.
+Biologists don't want the application so complicated.
+
 Terminologies
 ------------
 
