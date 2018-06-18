@@ -1,10 +1,10 @@
 
 # use_whatever_you_like
 
-##Software Engineering Project
+## Software Engineering Project
 
-#Oh My Genes
+# Oh My Genes
 
-##A tool which allows our scientists to upload gene expression files and quickly get differentially expressed genes.
+## A tool which allows our scientists to upload gene expression files and quickly get differentially expressed genes.
 
-###deploy:run app.py
+### deploy:run app.py
