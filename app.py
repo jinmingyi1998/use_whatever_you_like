@@ -3,6 +3,8 @@ import xlrd
 import xlwt
 import math
 import time
+import numpy as np
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
@@ -15,7 +17,10 @@ def go():
         basepath = 'static/upload/' + filename
         upload_file.save(basepath)
         solve(filename)
-        return send_from_directory('static/res', filename, as_attachment=True)
+        #  return send_from_directory('static/res', filename, as_attachment=True)
+        send_from_directory('static/res', filename, as_attachment=True)
+        return '<img src=\"static/res/png/' + filename + '.png\"/>' \
+                                                         '<a href=\"static/res/' + filename + '\">download</a>'
     else:
         abort(404)
 
@@ -36,6 +41,8 @@ def solve(filename=None):
     writesheet.write(0, 1, 'control_sample')
     writesheet.write(0, 2, 'treat_sample')
     writesheet.write(0, 3, 'log_2[FC]')
+    x = []
+    y = []
     for i in range(sheet.nrows):
         if i == 0:
             continue
@@ -48,10 +55,21 @@ def solve(filename=None):
             result = round(math.log(treat_sample / control_number, 2), 2)
         writesheet.write(i, 0, row[0])
         writesheet.write(i, 1, control_number)
+        x.append(control_number)
         writesheet.write(i, 2, treat_sample)
+        y.append(treat_sample)
         writesheet.write(i, 3, result)
     writebook.save('static/res/' + filename)
-    return 'static/res/' + filename
+
+    def draw(x, y):
+        ax = plt.subplot(111)
+        plt.scatter(x, y)
+        plt.savefig('static/res/png/' + filename + '.png')
+
+    draw(x, y)
+
+    # return 'static/res/' + filename
+    return filename
 
 
 if __name__ == '__main__':
