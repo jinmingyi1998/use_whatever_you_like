@@ -49,7 +49,7 @@ def solve(filename=None):
         row = sheet.row_values(i)
         control_number = float(row[1])
         treat_sample = float(row[2])
-        if control_number == 0:
+        if control_number <= 0 or treat_sample <=0:
             result = 0
         else:
             result = round(math.log(treat_sample / control_number, 2), 2)
