@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-
+#upload and getresult
 @app.route('/go', methods=['POST', 'GET'])
 def go():
     if request.method == 'POST':
@@ -29,7 +29,7 @@ def go():
 def index():
     return render_template('upload.html')
 
-
+#get the result
 def solve(filename=None):
     print(filename)
     workbook = xlrd.open_workbook('static/upload/' + filename)
